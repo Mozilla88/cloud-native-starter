@@ -107,3 +107,7 @@ reactive/articles-reactive/run-java.sh
 
 # Security
 mysecret.yaml
+EKS-kubernetes.yaml
+EKS-deployment.yaml
+EKS-kubernetes-deployment-v1.yaml
+EKS-kubernetes-deployment-v2.yaml

@@ -39,6 +39,13 @@ spec:
           subset: v1
   - match:
     - uri:
+        prefix: /api/v1/getauthor
+    route:
+      - destination:
+          host: authors
+          subset: v1
+  - match:
+    - uri:
         prefix: /openapi/ui/ 
     route:
     - destination:
