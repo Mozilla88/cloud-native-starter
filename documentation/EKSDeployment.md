@@ -18,16 +18,6 @@ Most important: an AWS Cloud account, you can register for a free account [here]
 * [aws CLI](https://aws.amazon.com/cli/)
 * [eksctl CLI](https://eksctl.io/)
 
-A really nice feature of Amazon EKS clusters is that they use your AWS IAM users and groups for authentication, rather than the cluster having a separate set of users (as you’re probably accustomed to). Although the authentication is different, authorization uses the same RBAC system – you’re just binding your existing AWS Identity and Access Management (IAM) users to Roles instead of Kubernetes-internal users.
-
-For this authentication to work, your kubectl needs to be able to present your AWS credentials to the cluster, rather than the Kubernetes-specific x509 certificate you probably use now.
-
-To do that, kubectl needs a plugin:
-
-```
-go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator
-```
-
 Run this script to check the prerequisites:
 
 ```
