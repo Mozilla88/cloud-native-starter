@@ -75,20 +75,20 @@ From now on if you want to use `kubectl` commands with your EKS cluster and you 
 
 Amazon Elastic Kubernetes Service has an option to install a managed Istio into a Kubernetes cluster. Unfortunately, the Kubernetes Cluster we created in the previous step does not meet the hardware requirements for managed Istio. Hence we do a manual install of the Istio demo or evaluation version.
 
-These are the instructions to install Istio. We used and tested Istio 1.5.1 for this project. Please be aware that these installation instructions will not work with Istio versions prior to 1.4.0!
+These are the instructions to install Istio. We used and tested Istio 1.7.2 for this project. Please be aware that these installation instructions will not work with Istio versions prior to 1.4.0!
 
 
-1. Download Istio, this will create a directory istio-1.5.1:
+1. Download Istio, this will create a directory istio-1.7.2:
 
     ```
-    curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.5.1 sh -
+    curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.7.2 sh -
     ```
 
 1. Add `istioctl` to the PATH environment variable, e.g copy paste in your shell and/or `~/.profile`. Follow the instructions in the installer message.
 
 
     ```
-    export PATH="$PATH:/path/to/istio-1.5.1/bin"
+    export PATH="$PATH:/path/to/istio-1.7.2/bin"
     ```
 
 1. Verify the `istioctl` installation:
@@ -105,7 +105,7 @@ These are the instructions to install Istio. We used and tested Istio 1.5.1 for 
     **Note:** This is a "...configuration designed to showcase Istio functionality with modest resource requirements. ... **This profile enables high levels of tracing and access logging so it is not suitable for performance tests!**"
 
     ```
-    $ istioctl manifest apply --set profile=demo
+    $ istioctl install --set profile=demo
     ```
 
 

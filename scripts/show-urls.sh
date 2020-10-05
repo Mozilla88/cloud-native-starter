@@ -14,42 +14,6 @@ function setup() {
   ingressport=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
 
   _out ------------------------------------------------------------------------------------
-  _out kiali
-  _out Run the command: istioctl dashboard kiali
-#  _out otherwise, for older Istio versions:
-#  command1="kubectl -n istio-system port-forward $"
-#  command2="(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001:20001"
-#  _out Run the command: ${command1}${command2}
-#  _out Then open http://localhost:20001/kiali/console with username: admin, password: admin
-  _out ------------------------------------------------------------------------------------
-
-  _out prometheus
-  _out Run the command: istioctl dashboard prometheus
-#  _out otherwise, for older Istio versions:
-#  command1="kubectl -n istio-system port-forward $"
-#  command2="(kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}') 9090:9090 &"
-#  _out Run the command: ${command1}${command2}
-#  _out Then open http://localhost:9090/
-  _out ------------------------------------------------------------------------------------
-
-  _out jaeger
-  _out Run the command: istioctl dashboard jaeger
-#  _out otherwise, for older Istio versions:
-#  command1="kubectl -n istio-system port-forward $"
-#  command2="(kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 16686:16686 &"
-#  _out Run the command: ${command1}${command2}
-#  _out Then open http://localhost:16686
-  _out ------------------------------------------------------------------------------------
-
-  _out grafana
-  _out Run the command: istioctl dashboard grafana
-#  _out otherwise, for older Istio versions:
-#  command1="kubectl -n istio-system port-forward $"
-#  command2="(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000:3000 &"
-#  _out Run the command: ${command1}${command2}
-#  _out Then open http://localhost:3000/dashboard/db/istio-mesh-dashboard
-  _out ------------------------------------------------------------------------------------
-
   _out articles
   nodeport=$(kubectl get svc articles --ignore-not-found --output 'jsonpath={.spec.ports[*].nodePort}')
   if [ -z "$nodeport" ]; then

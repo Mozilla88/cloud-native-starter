@@ -35,7 +35,7 @@ function create_cluster() {
   aws configure set default.output $AWS_OUTPUT >> $LOG_FILE 2>&1
 
   _out Creating cluster
-  eksctl create cluster --name cloud-native --nodes=2 --region ap-east-1 --ssh-access --ssh-public-key "/d/msys64/home/dlee/.ssh/id_rsa.pub" >> $LOG_FILE 2>&1
+  eksctl create cluster --name $REGISTRY_NAMESPACE --nodes=2 --ssh-access --ssh-public-key "$HOME/.ssh/id_rsa.pub" >> $LOG_FILE 2>&1
   # check if something went wrong
    if [ $? == 0 ]; then 
      _out -- Creating a cluster will take some time, please wait at least 20 minutes before

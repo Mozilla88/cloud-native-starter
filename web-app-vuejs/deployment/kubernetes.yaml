@@ -37,6 +37,6 @@ spec:
         image: web-app:1
         ports:
         - containerPort: 80
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
       restartPolicy: Always
 ---

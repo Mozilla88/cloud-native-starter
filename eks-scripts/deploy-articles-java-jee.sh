@@ -11,7 +11,7 @@ fi
 source $CFG_FILE
 
 # Login to Amazon Elastic Container Registry
-aws ecr get-login-password | docker login --username AWS --password-stdin $REGISTRY
+# aws ecr get-login-password | docker login --username AWS --password-stdin $REGISTRY
 
 exec 3>&1
 
