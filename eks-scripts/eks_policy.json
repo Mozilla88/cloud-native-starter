@@ -27,10 +27,10 @@
 				"iam:GetOpenIDConnectProvider"
             ],
             "Resource": [
-                "arn:aws:iam::836946026989:instance-profile/eksctl-*",
-                "arn:aws:iam::836946026989:role/eksctl-*",
+                "arn:aws:iam::<account_id>:instance-profile/eksctl-*",
+                "arn:aws:iam::<account_id>:role/eksctl-*",
                 "arn:aws:ec2:*:*:internet-gateway/*",
-				"arn:aws:iam::836946026989:oidc-provider/*"
+				"arn:aws:iam::<account_id>:oidc-provider/*"
             ]
         },
         {
@@ -152,6 +152,7 @@
                 "ec2:DeleteSecurityGroup",
                 "ssm:DeleteDocument",
                 "ec2:ModifySubnetAttribute",
+				"elasticloadbalancing:DescribeLoadBalancers",
 				"ecr:CreateRepository",
                 "ecr:GetAuthorizationToken",
                 "ecr:InitiateLayerUpload",
@@ -166,7 +167,7 @@
             "Action": [
                 "ssm:GetParameter"
             ],
-            "Resource": "arn:aws:ssm:ap-east-1:redacted:parameter/*",
+            "Resource": "arn:aws:ssm:<region>:redacted:parameter/*",
             "Effect": "Allow"
         }
     ]
