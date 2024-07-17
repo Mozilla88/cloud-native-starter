@@ -70,7 +70,7 @@ We will use `istioctl` to install Istio:
     **Note:** This is a "...configuration designed to showcase Istio functionality with modest resource requirements. ... **This profile enables high levels of tracing and access logging so it is not suitable for performance tests!**"
 
     ```
-    $ istioctl manifest apply --set profile=demo
+    $ istioctl install --set profile=demo
     ```
 
 

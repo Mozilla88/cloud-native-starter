@@ -1,3 +1,4 @@
+*.bak
 cloud-native-starter-key.json
 target
 .settings
