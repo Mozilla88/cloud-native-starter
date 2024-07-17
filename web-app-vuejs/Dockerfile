@@ -6,7 +6,7 @@ COPY package.json /usr/src/app/
 COPY babel.config.js /usr/src/app/
 
 WORKDIR /usr/src/app/
-RUN yarn install
+RUN yarn install --network-timeout 100000
 RUN yarn build
 
 
