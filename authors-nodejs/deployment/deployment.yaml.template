@@ -21,7 +21,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: localhost:5000/authors:1
+      - image: authors:1
         name: authors
         env:
         - name: DATABASE
