@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: articles
-        image: articles:1
+        image: localhost:5000/articles:1
         ports:
         - containerPort: 8080
         env:
