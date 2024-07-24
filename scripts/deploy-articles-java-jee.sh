@@ -24,7 +24,7 @@ function setup() {
   fi
   unzip -o liberty-opentracing-zipkintracer-1.3-sample.zip -d liberty-opentracing-zipkintracer/
 
-  # eval $(minikube docker-env) 
+  eval $(minikube docker-env) 
   docker build -f Dockerfile.nojava -t articles:1 .
   docker tag articles:1 localhost:5000/articles:1
   docker push localhost:5000/articles:1
