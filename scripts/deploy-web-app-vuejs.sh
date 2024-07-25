@@ -32,7 +32,7 @@ function setup() {
 
   # eval $(minikube docker-env) 
   docker build -f Dockerfile -t web-app:1 .
-  docker tag articles:1 localhost:5000/web-app:1
+  docker tag web-app:1 localhost:5000/web-app:1
   docker push localhost:5000/web-app:1
 
   kubectl apply -f deployment/kubernetes.yaml
