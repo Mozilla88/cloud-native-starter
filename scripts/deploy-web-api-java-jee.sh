@@ -51,10 +51,10 @@ function setup() {
     mv liberty/server2.xml liberty/server.xml
   fi
   
-  eval $(minikube docker-env) 
+  # eval $(minikube docker-env) 
   docker build -f Dockerfile.nojava -t web-api:1 .
-  # docker tag articles:1 localhost:5000/web-api:1
-  # docker push localhost:5000/web-api:1
+  docker tag web-api:1 localhost:5000/web-api:1
+  docker push localhost:5000/web-api:1
 
   kubectl apply -f deployment/kubernetes-service.yaml
   kubectl apply -f deployment/kubernetes-deployment-v1.yaml
